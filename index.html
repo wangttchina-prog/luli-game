@@ -90,6 +90,15 @@
         }
 
         .hidden { display: none !important; }
+        // 在 <style> 里加入震动效果
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -1px) rotate(0deg); }
+}
+
     </style>
 </head>
 <body>
@@ -151,7 +160,7 @@
         initGame();
         gameActive = true;
         requestAnimationFrame(gameLoop);*/
-        function startGame() {
+function startGame() {
     /* 1. 先触发一个视觉冲击动画*/
     const overlay = document.getElementById('start-overlay');
     overlay.style.background = "white"; // 闪白
@@ -171,14 +180,6 @@
     }, 500);
 }
 
-// 在 <style> 里加入震动效果
-
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -1px) rotate(0deg); }
-}
 
     }
 
@@ -271,3 +272,4 @@
 </body>
 
 </html>
+
