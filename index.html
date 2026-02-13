@@ -92,12 +92,6 @@
         .hidden { display: none !important; }
         // 在 <style> 里加入震动效果
 
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -1px) rotate(0deg); }
-}
 
     </style>
 </head>
@@ -153,34 +147,13 @@
         enemies = [];
     }
 
-   /* function startGame() {
+  function startGame() {
         document.getElementById('start-page').style.display = 'none';
         document.getElementById('game-ui').style.display = 'block';
         canvas.style.display = 'block';
         initGame();
         gameActive = true;
-        requestAnimationFrame(gameLoop);*/
-function startGame() {
-    /* 1. 先触发一个视觉冲击动画*/
-    const overlay = document.getElementById('start-overlay');
-    overlay.style.background = "white"; // 闪白
-    overlay.style.transition = "all 0.5s";
-    
-    // 给首页加个震动效果
-    document.getElementById('start-page').style.animation = "shake 0.5s";
-
-    // 2. 延迟一点点进入游戏，增加仪式感
-    setTimeout(() => {
-        document.getElementById('start-page').classList.add('hidden');
-        canvas.style.display = 'block';
-        document.getElementById('game-ui').style.display = 'block';
-        initGame();
-        gameActive = true;
         requestAnimationFrame(gameLoop);
-    }, 500);
-}
-
-
     }
 
     // 核心循环：使用高效的时间戳处理，解决卡顿
@@ -272,4 +245,5 @@ function startGame() {
 </body>
 
 </html>
+
 
